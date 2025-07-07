@@ -1,0 +1,17 @@
+# - preprocessing confing
+
+# normal regressor models
+data_path: './datasets/raw_data/raw_data_origami_TRAIN.csv'
+
+# output dir
+output_dir: './regression_experiments/RandomForest_replica_1'
+
+# scaler model name 
+scaler: 'MinMaxScaler'
+
+# design space variables
+input_variables: ['Temperature', 'MgCl2_concentration', 'pH_f', 'Incubation_time', 'DNase_I_concentration', 'Rectangles', 'Rods', 'Spheres']
+heldout_scaler_colums: ['Rectangles', 'Rods', 'Spheres']
+target_variable: ['Diffusion_Coefficient']
+
+test_split: 0.3

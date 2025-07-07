@@ -1,0 +1,15 @@
+# - experiments ingredients
+
+# ['GPR', 'RandomForest', 'SVR', 'XGBoost']
+regressor_model: 'RandomForest'
+
+# unique to each regressors
+# GPR : ['1k', '1k_noise', '2k', '2k_noise', '3k', '3k_noise']
+# SVR / RandomForest / XGBoost: 'Defaut' - they do not have options for now
+parameter_searchspace: 'Defaut'
+
+# number of cross validations
+ncv: 5
+
+# repetitions
+repetitions: 5
