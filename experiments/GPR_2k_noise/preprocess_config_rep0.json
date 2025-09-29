@@ -1,0 +1,26 @@
+{
+    "data_path": "./datasets_full/raw_data/raw_data_origami_TRAIN.csv",
+    "output_dir": "./regression_experiments/GPR_2k_noise_FULL/",
+    "scaler": "MinMaxScaler",
+    "input_variables": [
+        "Temperature [ºC]",
+        "MgCl2 concentration [mM]",
+        "pH_f",
+        "Incubation time [min]",
+        "DNase I concentration [U/mL]",
+        "Rectangles",
+        "Rods",
+        "Spheres"
+    ],
+    "heldout_scaler_colums": [
+        "Rectangles",
+        "Rods",
+        "Spheres"
+    ],
+    "target_variable": [
+        "Diffusion Coefficient [µm^2/s]"
+    ],
+    "test_split": 0.3,
+    "repetition": 0,
+    "execution": "Jun_10_2025-14:41:07"
+}
