@@ -8,6 +8,7 @@
 import os
 import re
 import json
+import shutil
 import joblib
 import random
 import numpy as np
@@ -16,6 +17,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from origamiregressor.experimentVariables import SCALER_MODELS
 
+from pathlib import Path
 from datetime import datetime
 from typing import Any, List
 
@@ -226,6 +228,22 @@ def get_files_from(folder, ew=None, sw=None, verbose=True):
         print(f"Files:\n{file_list}, ({len(file_list)})")
     return file_list
 
+
+def create_strict_folder(path_str: str, overwrite: bool = False) -> None:
+    """
+    Create a folder from a path string, with optional overwrite.
+    
+    Args:
+        path_str: str - Path to the folder to create
+        overwrite: bool - If True, allows overwriting existing folder (default: False)
+    """
+    path = Path(path_str)
+    if path.exists():
+        if overwrite:
+            shutil.rmtree(path)
+        else:
+            raise FileExistsError(f"Directory '{path}' already exists.")
+    path.mkdir(parents=True)
 
 # -------------------------------------------------- #
 # --- points grid

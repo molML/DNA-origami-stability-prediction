@@ -4,7 +4,8 @@
 data_path: './datasets/raw_data/raw_data_origami_TRAIN.csv'
 
 # output dir
-output_dir: './regression_experiments/RandomForest_replica_1'
+output_dir: 'Test_model'
+overwrite_output_dir: true
 
 # scaler model name 
 scaler: 'MinMaxScaler'

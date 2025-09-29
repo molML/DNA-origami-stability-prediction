@@ -15,9 +15,10 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_val_score, ShuffleSplit
 from sklearn.metrics import mean_squared_error, r2_score
 
-from origamiregressor.experimentManager import pre_process_pipeline
+from origamiregressor.experimentManager import pre_process_pipeline, create_strict_folder
 from origamiregressor.experimentVariables import SCORING_FUNCS
 
+from pathlib import Path
 from typing import Callable, Any
 
 # -------------------------------------------------------------------
@@ -30,7 +31,11 @@ def regression_experiment(pp_config_dict: dict,
                           repetitions: int):
 
     # extract the output dir from the preprocessin
-    output_dir = pp_config_dict['output_dir']
+    BASE_EXPERIMENT_DIR = str(Path(__file__).resolve().parents[1]) + '/experiments/'
+    output_dir_path = pp_config_dict['output_dir']
+    overwrite_output_dir = pp_config_dict.get('overwrite_output_dir', False)
+    output_dir = create_strict_folder(str(BASE_EXPERIMENT_DIR / output_dir_path), overwrite=overwrite_output_dir)
+
     # set up the dataframes with the metrics
     df_metrics = pd.DataFrame(columns=['MSE', 'RMSE', 'r2'])
 
