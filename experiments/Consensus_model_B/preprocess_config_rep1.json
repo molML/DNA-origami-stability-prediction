@@ -1,0 +1,26 @@
+{
+    "data_path": "../../datasets_full/raw_data/raw_data_origami_TRAIN_xgboost_copy.csv",
+    "output_dir": "./",
+    "scaler": "MinMaxScaler",
+    "input_variables": [
+        "Temperature",
+        "MgCl2_concentration",
+        "pH_f",
+        "Incubation_time",
+        "DNase_I_concentration",
+        "Rectangles",
+        "Rods",
+        "Spheres"
+    ],
+    "heldout_scaler_colums": [
+        "Rectangles",
+        "Rods",
+        "Spheres"
+    ],
+    "target_variable": [
+        "Diffusion_Coefficient"
+    ],
+    "test_split": 0.3,
+    "repetition": 1,
+    "execution": "Jun_17_2025-15:56:07"
+}
