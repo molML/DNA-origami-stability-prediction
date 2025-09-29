@@ -1,7 +1,7 @@
 # - preprocessing confing
 
 # normal regressor models
-data_path: './datasets/raw_data/raw_data_origami_TRAIN.csv'
+data_path: 'raw_data/raw_data_origami_TRAIN.csv'
 
 # output dir
 output_dir: 'Test_model'

@@ -32,9 +32,19 @@ def regression_experiment(pp_config_dict: dict,
 
     # extract the output dir from the preprocessin
     BASE_EXPERIMENT_DIR = str(Path(__file__).resolve().parents[1]) + '/experiments/'
-    output_dir_path = pp_config_dict['output_dir']
-    overwrite_output_dir = pp_config_dict.get('overwrite_output_dir', False)
-    output_dir = create_strict_folder(str(BASE_EXPERIMENT_DIR / output_dir_path), overwrite=overwrite_output_dir)
+    output_dir_path = pp_config_dict.pop('output_dir')
+    overwrite_output_dir = pp_config_dict.pop('overwrite_output_dir')
+    output_dir = BASE_EXPERIMENT_DIR + output_dir_path + '/'
+    create_strict_folder(output_dir, overwrite=overwrite_output_dir)
+    print(f'Output dir: {output_dir}')
+    # Reassign the output dir to the pp_config_dict
+    pp_config_dict['output_dir'] = output_dir
+
+    # Updating datapath
+    local_data_path = pp_config_dict.pop('data_path')
+    absolute_data_path = str(Path(__file__).resolve().parents[1]) + '/datasets/' + local_data_path
+    pp_config_dict['data_path'] = absolute_data_path
+    print(f'Using training data from: {absolute_data_path}')
 
     # set up the dataframes with the metrics
     df_metrics = pd.DataFrame(columns=['MSE', 'RMSE', 'r2'])
