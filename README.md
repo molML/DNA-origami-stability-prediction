@@ -1,6 +1,6 @@
 # DNA-origami-stability-prediction
 
-![repo version](https://img.shields.io/badge/Version-v.%201.0.0-green)
+![repo version](https://img.shields.io/badge/Version-v.%200.1.0-green)
 ![python version](https://img.shields.io/badge/python-3.9_|_3.10_|_3.11|_3.12-blue)
 [![biorXiv](https://img.shields.io/badge/biorXiv-10.1101%2F2021.07.21.453083-red)](https://www.biorxiv.org/content/10.1101/2025.07.18.665506v1)
 <!-- [![Static Badge](https://img.shields.io/badge/Data-Zenodo:_10.5281/8289605-54af7d)](https:///zenodo.org/records/8289605) -->
@@ -14,7 +14,7 @@
 
 <h2 id="disclaimer">Disclaimer</h2>
 
-_This repo is not the final version an can be subjected to changes._
+_The work has been submitted for peer-review and it might not represent the final version, the code and/or the content of the paper can be subjected to changes._
 
 <!-- Abstract-->
 <h2 id="abstract">Abstract</h2>
@@ -25,9 +25,36 @@ DNA origami nanostructures offer substantial potential as programmable, biocompa
 <!-- Content-->
 <h2 id="content">Content</h2>
 
-This repository contains the code used to apply the active machine learning pipeline described in the main [paper](https://www.biorxiv.org/content/10.1101/2025.07.18.665506v1).\
+This repository contains the code used to apply the machine learning pipeline described in the main [paper](https://www.biorxiv.org/content/10.1101/2025.07.18.665506v1).
+
 This repository is structured in the following way:
 -   `/datasets/` : folder containing the datasets used to train/test/validate the models in our experiments.
+-   `/experiments/` : folder containing the output data collected from the experiments described in the paper.
 -   `/figures/` : folder containig high resolution figure as reported in the main paper.
--   `/origamiregressor/` : main folder containig the `.py` modules defining the package.
--   `/script/` : 
+-   `/script/` :  folder containig the script for running a replicate or a new experiment using the described ML set up.
+-   `/src/origamiregressor/` : main folder containig the code modules defining the package.
+-   `environment.yaml` : the environment file to create and install the package.
+-   `pyproject.toml` : the setup file for installing the package.
+
+
+<!-- Installation-->
+<h2 id="content">Intallation</h2>
+
+The package and all the needed dependencies can be installed with the provided `env.yaml` file. The installation was tested on Ubuntu 22.04.3.
+```bash
+conda env create -f environment.yaml
+```
+
+<!-- Running Experiments-->
+<h2 id="content">Running Experiments</h2>
+
+A quick tutorial on how to run the experiments, to reproduce and/or test the results, is given in the `./experiment/` folder.
+
+<!-- How to cite-->
+<h2 id="content">How to cite</h2>
+You can currently cite our work from our preprint:
+
+Predicting DNA origami stability in physiological media by machine learning.\
+*Judith Zubia-Aranburu, Andrea Gardin, Lars Paffen, Matteo Tollemeto, Ane Alberdi, Maite Termenon, Francesca Grisoni, Tania Patiño Padial*
+bioRxiv, 18 July, 2025. DOI: https://doi.org/10.1101/2025.07.18.665506
+
