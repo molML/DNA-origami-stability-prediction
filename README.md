@@ -36,9 +36,8 @@ This repository is structured in the following way:
 -   `environment.yaml` : the environment file to create and install the package.
 -   `pyproject.toml` : the setup file for installing the package.
 
-
 <!-- Installation-->
-<h2 id="content">Intallation</h2>
+<h2 id="installation">Intallation</h2>
 
 The package and all the needed dependencies can be installed with the provided `env.yaml` file. The installation was tested on Ubuntu 22.04.3.
 ```bash
@@ -46,12 +45,12 @@ conda env create -f environment.yaml
 ```
 
 <!-- Running Experiments-->
-<h2 id="content">Running Experiments</h2>
+<h2 id="runexperiment">Running Experiments</h2>
 
 A quick tutorial on how to run the experiments, to reproduce and/or test the results, is given in the `./experiment/` folder.
 
 <!-- How to cite-->
-<h2 id="content">How to cite</h2>
+<h2 id="howtocite">How to cite</h2>
 You can currently cite our work from our preprint:
 
 Predicting DNA origami stability in physiological media by machine learning.\
