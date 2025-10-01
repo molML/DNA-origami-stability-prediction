@@ -127,6 +127,7 @@ def regression_experiment(pp_config_dict: dict,
         print(f'Rep{rep} RMSE: {np.sqrt(mean_squared_error(y_true=y_test, y_pred=y_pred))}')
         print(f'Rep{rep} R2: {r2_score(y_true=y_test, y_pred=y_pred)}')
         df_metrics.loc[rep] = scores_tmp
+        print("\n")
 
     df_metrics.to_csv(output_dir+'scores.csv')
 
@@ -165,9 +166,10 @@ if __name__ == '__main__':
     else:
         raise ValueError('Regressor not yet implemented!')
 
-    print('\nPreprocessing config:')
+    print('\nExperiment config:')
     pprint.pprint(exp_config_dict)
     print(f'Regressor: {expModel.Regressor}')
+    print("\n")
     
     number_of_cv = exp_config_dict['ncv']
 
