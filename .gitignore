@@ -208,3 +208,6 @@ __marimo__/
 
 # hide notebooks (temoporary)
 *.ipynb
+
+# hide the test model folder (tutorial tests)
+Test_model/
